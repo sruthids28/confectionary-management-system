@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("https://i.pinimg.com/originals/ae/82/55/ae82558bfc6795c6c5566a1193ce6af4.jpg");
+            
+        }
+
+        table {
+            width: 80%; /* Adjust the width as needed */
+            border-collapse: collapse;
+            border: 5px solid #090208; /* Background color for table border */
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 4px; /* Adjust the padding to reduce cell size */
+            text-align: left;
+        }
+
+        th {
+            background-color: #68afd8;
+        }
+         .button-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .logout-button {
+            background-color: rgb(109, 47, 82);
+            color: white;
+            border: none;
+            padding: 10px 20px; 
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px; /* Add margin to separate buttons */
+        }
+
+        .logout-button:hover {
+            background-color: rgb(191, 90, 152); /* Change color on hover */
+        }
+    </style>
+</head>
+<body>
+     <div class="button-container">
+        <button class="logout-button" onclick="location.href='/home'">back</button>
+    </div>
+    <h1>DISPLAY PAGE</h1>
+    <table>
+        <thead>
+            <tr>
+                <th> username</th>
+                <th>address</th>
+                <th>phone</th>
+                <th>sweetItem</th>
+                <th>Price</th>
+                <th>quantity</th>
+                <th>totalPrice</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each items}}
+            <tr>
+                <td>{{this.username}}</td>
+                <td>{{this.address}}</td>
+                <td>{{this.phone}}</td>
+                <td>{{this.sweetItem}}</td>
+                <td>${{this.price}}</td>
+                <td>{{this.quantity}}</td>
+                <td>${{this.totalPrice}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete page</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("https://i.pinimg.com/originals/ae/82/55/ae82558bfc6795c6c5566a1193ce6af4.jpg");
+        }
+
+        .login-container {
+            text-align: center;
+            background-color: rgb(126, 203, 235);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: rgb(201, 39, 145);
+        }
+
+        .input-group {
+            margin-bottom: 20px; 
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 300px; 
+            padding: 12px; 
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: rgb(223, 125, 188);
+            color: white;
+            border: none;
+            padding: 15px 30px; 
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+         .button-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .logout-button {
+            background-color: rgb(109, 47, 82);
+            color: white;
+            border: none;
+            padding: 10px 20px; 
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px; /* Add margin to separate buttons */
+        }
+
+        .logout-button:hover {
+            background-color: rgb(191, 90, 152); /* Change color on hover */
+        }
+    </style>
+</head>
+<body>
+      <div class="button-container">
+        <button class="logout-button" onclick="location.href='/home'">back</button>
+    </div>
+    <div class="login-container">
+        <h1>DELETE PAGE</h1>
+        <p>Enter the name of the item to delete:</p>
+        <form action="/delete" method="POST">
+            <input type="text" name="sweetItem" placeholder="Sweet Item" required>
+            <input type="submit" value="Delete">
+        </form>
+    </div>
+</body>
+</html>

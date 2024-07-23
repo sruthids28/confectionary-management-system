@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update page</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("https://wallpaperaccess.com/full/1265340.jpg");
+        }
+
+        .login-container {
+            text-align: center;
+            background-color: rgb(191, 82, 149);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: rgb(238, 231, 235);
+        }
+
+        .input-group {
+            margin-bottom: 20px; 
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 300px; 
+            padding: 12px; 
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: rgb(238, 218, 231);
+            color: rgb(162, 86, 86);
+            border: none;
+            padding: 15px 30px; 
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .logout-button {
+            background-color: rgb(109, 47, 82);
+            color: white;
+            border: none;
+            padding: 10px 20px; 
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px; /* Add margin to separate buttons */
+        }
+
+        .logout-button:hover {
+            background-color: rgb(191, 90, 152); /* Change color on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="button-container">
+        <button class="logout-button" onclick="location.href='/home'">back</button>
+    </div>
+    <div class="login-container">
+        <h2>UPDATE PAGE</h2>
+        <form action="/update" method="POST">
+        <label for="sweetItem">Sweet Item:</label><br>
+        <input type="text" id="sweetItem" name="sweetItem" required><br><br>
+        
+        <label for="price">Price:</label><br>
+        <input type="number" id="price" name="price" required><br><br>
+        
+        <input type="submit" value="Update">
+    </form>
+    </div>
+</body>
+</html>

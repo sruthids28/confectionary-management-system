@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Item Not Available</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      background-image: url("https://i.pinimg.com/originals/ae/82/55/ae82558bfc6795c6c5566a1193ce6af4.jpg");
+    }
+
+    .container {
+      text-align: center;
+      padding: 50px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #ff6347;
+    }
+
+    p {
+      color: #333;
+    }
+
+    .order-again-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ce4c2b;
+      color: #ebdcd8;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .order-again-button:hover {
+      background-color: #ce4c2b;
+    }
+  </style>
+  {{#if cssPath}}
+    <link rel="stylesheet" href="{{cssPath}}">
+  {{/if}}
+</head>
+<body>
+  <h1>Sorry, the item "{{sweetItem}}" is not available.</h1>
+  <p>Please order another item or <a href="/order" class="order-again-button">order again</a>.</p>
+</body>
+</html>

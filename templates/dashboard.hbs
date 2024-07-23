@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            background-image: url(https://wallpaperset.com/w/full/a/4/5/172955.jpg);
+        }
+
+        .dashboard-container {
+            text-align: center;
+            background-color: rgb(191, 82, 149);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: rgb(238, 218, 231);
+        }
+
+        .input-group {
+            margin-bottom: 20px; 
+            text-align: left;
+        }
+
+        input[type="button"] {
+            background-color: rgb(223, 125, 188);
+            color: white;
+            border: none;
+            padding: 15px 30px; 
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>DASHBOARD</h2>
+        <div class="input-group">
+            <input type="button" value="Admin" onclick="location.href='/admin'">
+            <input type="button" value="User" onclick="location.href='/user'">
+        </div>
+    </div>
+</body>
+</html>

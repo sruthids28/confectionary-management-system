@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS rules */
+        body {
+            font-family: Arial, sans-serif; /* Set a default font */
+            background-color: #f0f0f0; /* Set background color */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            background-image: url("https://img.goodfon.com/wallpaper/nbig/4/20/candy-colorful-sweet-konfety.webp");
+        }
+
+        h1 {
+            color: rgb(77, 45, 61); /* Set text color */
+            text-align: center; /* Center align heading */
+            margin-top: 50px; /* Add some top margin */
+        }
+
+        .button-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .logout-button {
+            background-color: rgb(109, 47, 82);
+            color: white;
+            border: none;
+            padding: 10px 20px; 
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px; /* Add margin to separate buttons */
+        }
+
+        .logout-button:hover {
+            background-color: rgb(191, 90, 152); /* Change color on hover */
+        }
+
+        .action-button {
+            background-color: #d7e1d7;
+            border: none;
+            color: rgb(88, 48, 71);
+            padding: 10px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .action-button:hover {
+            background-color: #cc65b4;
+        }
+
+        #displayResult {
+            margin-top: 20px; /* Add some space between buttons and display results */
+            padding: 20px; /* Add padding to display area */
+            background-color: white; /* Set background color for display area */
+            border-radius: 8px; /* Add border radius */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle effect */
+        }
+    </style>
+</head>
+<body>
+    <h1>HOME PAGE</h1>
+    <div class="button-container">
+        <button class="logout-button" onclick="location.href='/'">Logout</button>
+    </div>
+
+    <div>
+        <button class="action-button" onclick="location.href='/insert'">Insert</button>
+        <button class="action-button" onclick="location.href='/update'">Update</button>
+        <button class="action-button" onclick="location.href='/delete'">Delete</button>
+        <button class="action-button" onclick="location.href='/display'">Display details</button>
+        <button class="action-button" onclick="location.href='/order-detail'">Order details</button>
+    </div>
+
+    <div id="displayResult"></div>
+
+    <script>
+        
+        function fetchAndDisplayItems() {
+            fetch("/display")
+            .then(response => response.json())
+            .then(data => {
+                const displayResult = document.getElementById("displayResult");
+                displayResult.innerHTML = ""; // Clear previous results
+
+                // Iterate over items and display them
+                data.forEach(item => {
+                    const itemDiv = document.createElement("div");
+                    itemDiv.innerHTML = `<p>${item.sweetItem}: $${item.price}</p>`;
+                    displayResult.appendChild(itemDiv);
+                });
+            })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+</body>
+</html>
+

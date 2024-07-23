@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            background-image: url(https://wallpaperset.com/w/full/a/4/5/172955.jpg);
+        }
+
+        .dashboard-container {
+            text-align: center;
+            background-color: rgb(191, 82, 149);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: rgb(238, 218, 231);
+        }
+
+        .input-group {
+            margin-bottom: 20px; 
+            text-align: left;
+        }
+
+        input[type="button"] {
+            background-color: rgb(223, 125, 188);
+            color: white;
+            border: none;
+            padding: 15px 30px; 
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .button-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .logout-button {
+            background-color: rgb(109, 47, 82);
+            color: white;
+            border: none;
+            padding: 10px 20px; 
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px; /* Add margin to separate buttons */
+        }
+
+        .logout-button:hover {
+            background-color: rgb(191, 90, 152); /* Change color on hover */
+        }
+
+        .action-button {
+            background-color: #d7e1d7;
+            border: none;
+            color: rgb(88, 48, 71);
+            padding: 10px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .action-button:hover {
+            background-color: #cc65b4;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="button-container">
+        <button class="logout-button" onclick="location.href='/'">Logout</button>
+        </div>
+        <h2>USER DASHBOARD</h2>
+        <div class="input-group">
+            <input type="button" value="Order" onclick="location.href='/order'">
+            <input type="button" value="View" onclick="location.href='/view'">
+        </div>
+    </div>
+</body>
+</html>

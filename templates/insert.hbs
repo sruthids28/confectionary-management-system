@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("https://i.pinimg.com/originals/ae/82/55/ae82558bfc6795c6c5566a1193ce6af4.jpg");
+
+        .insert-container {
+            text-align: center;
+            background-color: rgb(117, 190, 222);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(206, 197, 197, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2 {
+            color: rgb(213, 57, 161);
+        }
+
+        .input-group {
+            margin-bottom: 20px; 
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 300px; 
+            padding: 12px; 
+            margin: 5px 0;
+            border: 1px solid #297ab4;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: rgb(225, 87, 179);
+            color: rgb(220, 191, 203);
+            border: none;
+            padding: 15px 30px; 
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            align-self: flex-end;
+        }
+         .button-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .logout-button {
+            background-color: rgb(109, 47, 82);
+            color: white;
+            border: none;
+            padding: 10px 20px; 
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px; /* Add margin to separate buttons */
+        }
+
+        .logout-button:hover {
+            background-color: rgb(191, 90, 152); /* Change color on hover */
+        }
+    </style>
+</head>
+<body>
+     <div class="button-container">
+        <button class="logout-button" onclick="location.href='/home'">back</button>
+    </div>
+    <div class="insert-container">
+        <h2>INSERT PAGE</h2>
+        <form action="/insert" method="post">
+            <div class="input-group">
+                <label for="sweetItem">Sweet Item:</label>
+                <input type="text" id="sweetItem" name="sweetItem" placeholder="Enter sweet item" required>
+            </div>
+            <div class="input-group">
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" placeholder="Enter price" required>
+            </div>
+            <input type="submit" value="insert">
+        </form>
+    </div>
+</body>
+</html>
